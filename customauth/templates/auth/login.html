@@ -1,0 +1,35 @@
+{% extends 'layouts/master.html' %}
+{% block title %} Login {% endblock title %}
+{% block content %} 
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <h2 class="text-muted">Login</h2>
+        {% if form.non_field_errors %}
+        <small class="text-danger">{{ form.non_field_errors }}</small>
+        {% endif %}
+
+    <form action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="{{from.username.id_for_lable}}" class="form-label">UserName:</label>
+            <input type="text" class="form-control" id="" placeholder="Enter name" name="{{form.username.name}}" value="{{form.username.value}}">
+            {% if form.username.errors %}
+            <span class="text-danger">{{form.username.errors}}</span>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label for="{{from.password.for_lable}}" class="form-label">Password:</label>
+            <input type="password" class="form-control" id="" placeholder="Enter Password" name="{{form.password.name}}" value="{{form.password.value}}">
+            {% if form.password.errors %}
+            <span class="text-danger">{{form.password.errors}}</span>
+            {% endif %}
+        </div>
+        <button class="btn btn-dark mt-2">Login</button>
+        <a class="btn btn-default" href="{% url 'register' %}">Create a new account</a>
+    </form>
+  </div>
+</div>
+
+
+{% endblock content %}

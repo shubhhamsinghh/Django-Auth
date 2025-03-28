@@ -1,0 +1,15 @@
+{% extends 'layouts/master.html' %}
+{% block title %} Dashboard {% endblock title %}
+{% block content %} 
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <h2 class="text-muted">Dashboard {{request.user.username}}</h2>
+    </div>
+    <div class="col-md-2 float-right">
+        <a class="btn btn-danger mt-2" href="{% url 'logout' %}">Logout</a>
+    </div>
+</div>
+
+
+{% endblock content %}
