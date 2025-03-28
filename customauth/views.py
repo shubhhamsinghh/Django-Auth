@@ -3,6 +3,8 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
 from .middlewares import auth, guest
 
+def home_view(request):
+    return render(request, 'pages/home.html')
 @guest
 def register_view(request):
     if request.method == 'POST':

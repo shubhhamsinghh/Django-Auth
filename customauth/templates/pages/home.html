@@ -1,0 +1,22 @@
+{% extends 'layouts/master.html' %}
+{% block title %} Home {% endblock title %}
+{% block content %} 
+
+<section class="container">
+<div class="row justify-content-center">
+    <div class="col-md-6 text-center">
+        <h2 class="text-muted">Home</h2>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-md-6 text-center">
+        <a class="btn btn-dark mt-2" href="{% url 'login' %}">Login</a>
+    </div>
+
+    <div class="col-md-6 text-center">
+        <a class="btn btn-dark mt-2" href="{% url 'register' %}">Register</a>
+    </div>
+</div>
+</div>
+</section>
+{% endblock content %}
